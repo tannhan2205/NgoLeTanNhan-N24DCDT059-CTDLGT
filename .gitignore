@@ -1,0 +1,32 @@
+# Tep chay duoc do g++ sinh ra tren Linux va macOS.
+# Ten khong co phan mo rong nen phai liet ke tung ten mot,
+# hoac dat het vao mot thu muc rieng roi bo qua ca thu muc.
+bai
+chao
+
+# Tep chay duoc tren Windows
+*.exe
+
+# Ten mac dinh khi bien dich ma quen tuy chon -o
+a.out
+*.out
+
+# Tep tam Python
+__pycache__/
+*.pyc
+
+# Tep ket qua sinh ra khi kiem thu
+tam.txt
+kq1.txt
+kq2.txt
+ketqua.txt
+
+# Hai tep nay chua duong dan va ten trinh bien dich rieng cua tung may
+# (g++ hay g++-16, duong dan gdb tren Windows), nen khong chia se.
+# Rieng settings.json thi giong nhau moi may, van nen luu lai.
+.vscode/tasks.json
+.vscode/launch.json
+
+# Tep rac cua he dieu hanh
+.DS_Store
+Thumbs.db
