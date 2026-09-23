@@ -1,0 +1,3392 @@
+{
+  "language": "Python",
+  "edition": "Sinh viên",
+  "notice": "Nhật ký là dữ liệu thao tác, không phải chứng minh tác giả hoặc điểm số.",
+  "history": [
+    {
+      "number": 1,
+      "request": {
+        "op": "list.count",
+        "x": 25
+      },
+      "result": 0,
+      "message": "Số lần xuất hiện của 25: 0.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 2,
+      "request": {
+        "op": "list.reset",
+        "values": [
+          10,
+          20,
+          30
+        ]
+      },
+      "result": 3,
+      "message": "Đã tạo danh sách mới.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 3,
+      "request": {
+        "op": "list.reset",
+        "values": [
+          2,
+          2,
+          1,
+          2,
+          3,
+          2
+        ]
+      },
+      "result": 6,
+      "message": "Đã tạo danh sách mới.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            2,
+            2,
+            1,
+            2,
+            3,
+            2
+          ],
+          "n": 6
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 4,
+      "request": {
+        "op": "list.count",
+        "x": 25
+      },
+      "result": 0,
+      "message": "Số lần xuất hiện của 25: 0.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            2,
+            2,
+            1,
+            2,
+            3,
+            2
+          ],
+          "n": 6
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            2,
+            2,
+            1,
+            2,
+            3,
+            2
+          ],
+          "n": 6
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 5,
+      "request": {
+        "op": "list.count",
+        "x": 2
+      },
+      "result": 4,
+      "message": "Số lần xuất hiện của 2: 4.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            2,
+            2,
+            1,
+            2,
+            3,
+            2
+          ],
+          "n": 6
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            2,
+            2,
+            1,
+            2,
+            3,
+            2
+          ],
+          "n": 6
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 6,
+      "request": {
+        "op": "list.delete_all",
+        "x": 2
+      },
+      "result": 4,
+      "message": "Đã xoá 4 nút mang giá trị 2.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            2,
+            2,
+            1,
+            2,
+            3,
+            2
+          ],
+          "n": 6
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 7,
+      "request": {
+        "op": "stack.push",
+        "x": 10
+      },
+      "result": 10,
+      "message": "Đã đẩy 10 lên đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10
+          ],
+          "n": 1,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 8,
+      "request": {
+        "op": "stack.push",
+        "x": 20
+      },
+      "result": 20,
+      "message": "Đã đẩy 20 lên đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10
+          ],
+          "n": 1,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20
+          ],
+          "n": 2,
+          "top": 20
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 9,
+      "request": {
+        "op": "stack.push",
+        "x": 30
+      },
+      "result": 30,
+      "message": "Đã đẩy 30 lên đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20
+          ],
+          "n": 2,
+          "top": 20
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 10,
+      "request": {
+        "op": "stack.pop_many",
+        "k": 2
+      },
+      "result": [
+        30,
+        20
+      ],
+      "message": "Đã lấy 2 phần tử theo LIFO.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10
+          ],
+          "n": 1,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 11,
+      "request": {
+        "op": "stack.push",
+        "x": 10
+      },
+      "result": 10,
+      "message": "Đã đẩy 10 lên đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10
+          ],
+          "n": 1,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            10
+          ],
+          "n": 2,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 12,
+      "request": {
+        "op": "stack.push",
+        "x": 20
+      },
+      "result": 20,
+      "message": "Đã đẩy 20 lên đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            10
+          ],
+          "n": 2,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            10,
+            20
+          ],
+          "n": 3,
+          "top": 20
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 13,
+      "request": {
+        "op": "stack.pop"
+      },
+      "result": 20,
+      "message": "Đã lấy 20 khỏi đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            10,
+            20
+          ],
+          "n": 3,
+          "top": 20
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            10
+          ],
+          "n": 2,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 14,
+      "request": {
+        "op": "stack.pop"
+      },
+      "result": 10,
+      "message": "Đã lấy 10 khỏi đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            10
+          ],
+          "n": 2,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10
+          ],
+          "n": 1,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 15,
+      "request": {
+        "op": "stack.pop"
+      },
+      "result": 10,
+      "message": "Đã lấy 10 khỏi đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10
+          ],
+          "n": 1,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 16,
+      "request": {
+        "op": "stack.push",
+        "x": 10
+      },
+      "result": 10,
+      "message": "Đã đẩy 10 lên đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [],
+          "n": 0,
+          "top": null
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10
+          ],
+          "n": 1,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 17,
+      "request": {
+        "op": "stack.push",
+        "x": 20
+      },
+      "result": 20,
+      "message": "Đã đẩy 20 lên đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10
+          ],
+          "n": 1,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20
+          ],
+          "n": 2,
+          "top": 20
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 18,
+      "request": {
+        "op": "stack.push",
+        "x": 30
+      },
+      "result": 30,
+      "message": "Đã đẩy 30 lên đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20
+          ],
+          "n": 2,
+          "top": 20
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 19,
+      "request": {
+        "op": "stack.pop_many",
+        "k": 2
+      },
+      "result": [
+        30,
+        20
+      ],
+      "message": "Đã lấy 2 phần tử theo LIFO.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10
+          ],
+          "n": 1,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 20,
+      "request": {
+        "op": "stack.push",
+        "x": 20
+      },
+      "result": 20,
+      "message": "Đã đẩy 20 lên đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10
+          ],
+          "n": 1,
+          "top": 10
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20
+          ],
+          "n": 2,
+          "top": 20
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 21,
+      "request": {
+        "op": "stack.push",
+        "x": 30
+      },
+      "result": 30,
+      "message": "Đã đẩy 30 lên đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20
+          ],
+          "n": 2,
+          "top": 20
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 22,
+      "request": {
+        "op": "stack.pop_many",
+        "k": 0
+      },
+      "result": [],
+      "message": "Đã lấy 0 phần tử theo LIFO.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 23,
+      "request": {
+        "op": "queue.reset",
+        "capacity": 4
+      },
+      "result": 4,
+      "message": "Đã tạo hàng đợi rỗng.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 5,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 4,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      }
+    },
+    {
+      "number": 24,
+      "request": {
+        "op": "queue.enqueue",
+        "x": 1
+      },
+      "result": true,
+      "message": "Đã ghi 1 vào ô logic 0.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [],
+          "a": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "n": 4,
+          "dau": 0,
+          "so": 0,
+          "active": []
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            1
+          ],
+          "a": [
+            1,
+            null,
+            null,
+            null
+          ],
+          "n": 4,
+          "dau": 0,
+          "so": 1,
+          "active": [
+            0
+          ]
+        }
+      }
+    },
+    {
+      "number": 25,
+      "request": {
+        "op": "queue.enqueue",
+        "x": 2
+      },
+      "result": true,
+      "message": "Đã ghi 2 vào ô logic 1.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            1
+          ],
+          "a": [
+            1,
+            null,
+            null,
+            null
+          ],
+          "n": 4,
+          "dau": 0,
+          "so": 1,
+          "active": [
+            0
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            1,
+            2
+          ],
+          "a": [
+            1,
+            2,
+            null,
+            null
+          ],
+          "n": 4,
+          "dau": 0,
+          "so": 2,
+          "active": [
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "number": 26,
+      "request": {
+        "op": "queue.enqueue",
+        "x": 3
+      },
+      "result": true,
+      "message": "Đã ghi 3 vào ô logic 2.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            1,
+            2
+          ],
+          "a": [
+            1,
+            2,
+            null,
+            null
+          ],
+          "n": 4,
+          "dau": 0,
+          "so": 2,
+          "active": [
+            0,
+            1
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            1,
+            2,
+            3
+          ],
+          "a": [
+            1,
+            2,
+            3,
+            null
+          ],
+          "n": 4,
+          "dau": 0,
+          "so": 3,
+          "active": [
+            0,
+            1,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "number": 27,
+      "request": {
+        "op": "queue.enqueue",
+        "x": 4
+      },
+      "result": true,
+      "message": "Đã ghi 4 vào ô logic 3.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            1,
+            2,
+            3
+          ],
+          "a": [
+            1,
+            2,
+            3,
+            null
+          ],
+          "n": 4,
+          "dau": 0,
+          "so": 3,
+          "active": [
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "a": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 0,
+          "so": 4,
+          "active": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "number": 28,
+      "request": {
+        "op": "queue.dequeue"
+      },
+      "result": 1,
+      "message": "Đã lấy 1 ở đầu hàng.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "a": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 0,
+          "so": 4,
+          "active": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            2,
+            3,
+            4
+          ],
+          "a": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 1,
+          "so": 3,
+          "active": [
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "number": 29,
+      "request": {
+        "op": "queue.dequeue"
+      },
+      "result": 2,
+      "message": "Đã lấy 2 ở đầu hàng.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            2,
+            3,
+            4
+          ],
+          "a": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 1,
+          "so": 3,
+          "active": [
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4
+          ],
+          "a": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 2,
+          "active": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "number": 30,
+      "request": {
+        "op": "queue.enqueue",
+        "x": 5
+      },
+      "result": true,
+      "message": "Đã ghi 5 vào ô logic 0.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4
+          ],
+          "a": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 2,
+          "active": [
+            2,
+            3
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5
+          ],
+          "a": [
+            5,
+            2,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 3,
+          "active": [
+            2,
+            3,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "number": 31,
+      "request": {
+        "op": "queue.enqueue",
+        "x": 6
+      },
+      "result": true,
+      "message": "Đã ghi 6 vào ô logic 1.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5
+          ],
+          "a": [
+            5,
+            2,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 3,
+          "active": [
+            2,
+            3,
+            0
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "number": 32,
+      "request": {
+        "op": "queue.peek_k",
+        "k": 3
+      },
+      "result": [
+        3,
+        4,
+        5
+      ],
+      "message": "Đã xem 3 phần tử đầu theo FIFO.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "number": 33,
+      "request": {
+        "op": "queue.peek_k",
+        "k": 0
+      },
+      "result": [],
+      "message": "Đã xem 0 phần tử đầu theo FIFO.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "number": 34,
+      "request": {
+        "op": "brackets.check",
+        "text": "(a+[b*c])-{d/e}"
+      },
+      "result": true,
+      "message": "Các dấu ngoặc khớp nhau.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "number": 35,
+      "request": {
+        "op": "brackets.check",
+        "text": "([)]"
+      },
+      "result": false,
+      "message": "Ngoặc đóng khác loại với ngoặc mở ở đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "number": 36,
+      "request": {
+        "op": "brackets.check",
+        "text": "([)]"
+      },
+      "result": false,
+      "message": "Ngoặc đóng khác loại với ngoặc mở ở đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "number": 37,
+      "request": {
+        "op": "brackets.check",
+        "text": "(a+[b*c])-{d/e}"
+      },
+      "result": true,
+      "message": "Các dấu ngoặc khớp nhau.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "number": 38,
+      "request": {
+        "op": "brackets.check",
+        "text": "([)]"
+      },
+      "result": false,
+      "message": "Ngoặc đóng khác loại với ngoặc mở ở đỉnh.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "number": 39,
+      "request": {
+        "op": "brackets.check",
+        "text": "(()"
+      },
+      "result": false,
+      "message": "Còn ngoặc mở chưa được đóng.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "number": 40,
+      "request": {
+        "op": "brackets.check",
+        "text": ")("
+      },
+      "result": false,
+      "message": "Ngoặc đóng không có ngoặc mở tương ứng.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    {
+      "number": 41,
+      "request": {
+        "op": "brackets.check",
+        "text": "(a+[b*c])-{d/e}"
+      },
+      "result": true,
+      "message": "Các dấu ngoặc khớp nhau.",
+      "before": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      },
+      "state": {
+        "language": "Python",
+        "edition": "Sinh viên",
+        "list": {
+          "values": [
+            1,
+            3
+          ],
+          "n": 2
+        },
+        "stack": {
+          "values": [
+            10,
+            20,
+            30
+          ],
+          "n": 3,
+          "top": 30
+        },
+        "queue": {
+          "values": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "a": [
+            5,
+            6,
+            3,
+            4
+          ],
+          "n": 4,
+          "dau": 2,
+          "so": 4,
+          "active": [
+            2,
+            3,
+            0,
+            1
+          ]
+        }
+      }
+    }
+  ]
+}
