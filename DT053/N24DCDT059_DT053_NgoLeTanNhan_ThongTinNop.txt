@@ -8,10 +8,10 @@ Mã đề: DT053
 Tên đề: Đường đi có tổng nhỏ nhất trên lưới
 
 URL GitHub thật: https://github.com/tannhan2205/NgoLeTanNhan-N24DCDT059-CTDLGT
-SHA C đầy đủ của mã/test/input dùng chạy và chụp ảnh: 68e81e87658bc7bfd7a44b120b6036d85efb5771
-Permalink tệp thuật toán chính tại C: https://github.com/tannhan2205/NgoLeTanNhan-N24DCDT059-CTDLGT/blob/68e81e87658bc7bfd7a44b120b6036d85efb5771/DT053/src/DuongDiNhoNhat.hpp
-Permalink tệp kiểm thử tại C: https://github.com/tannhan2205/NgoLeTanNhan-N24DCDT059-CTDLGT/blob/68e81e87658bc7bfd7a44b120b6036d85efb5771/DT053/test/runtests.cpp
-SHA S đầy đủ của phiên bản nộp cuối: (Điền sau khi commit ảnh và báo cáo cuối cùng)
+SHA C đầy đủ của mã/test/input dùng chạy và chụp ảnh: 79e0e1c86249f006c6d2dd78bd8c899f743af91f
+Permalink tệp thuật toán chính tại C: https://github.com/tannhan2205/NgoLeTanNhan-N24DCDT059-CTDLGT/blob/79e0e1c86249f006c6d2dd78bd8c899f743af91f/DT053/src/DuongDiNhoNhat.hpp
+Permalink tệp kiểm thử tại C: https://github.com/tannhan2205/NgoLeTanNhan-N24DCDT059-CTDLGT/blob/79e0e1c86249f006c6d2dd78bd8c899f743af91f/DT053/test/runtests.cpp
+SHA S đầy đủ của phiên bản nộp cuối: d6bd0e3b2ffd151640bfe8262867378c290574d0
 Xác nhận mã/test/input không đổi giữa C và S, hoặc mô tả phần đã chạy lại: Xác nhận mã nguồn, bộ kiểm thử và dữ liệu đầu vào hoàn toàn không đổi giữa phiên bản C và S.
 
 Ngôn ngữ và phiên bản: C++ (g++ 14.2.0 / Clang++ 19.1.1 UCRT64)
