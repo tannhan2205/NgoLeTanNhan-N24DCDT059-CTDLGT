@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DT053 - Mô phỏng Đường đi có tổng nhỏ nhất trên lưới | Ngô Lê Tấn Nhân</title>
+    <meta name="description" content="Ứng dụng mô phỏng trực quan giải thuật Quy hoạch động tìm đường đi có tổng chi phí nhỏ nhất trên lưới ô vuông - Đề tài DT053 - INT13185">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <div class="badge-topic">ĐỀ TÀI DT053</div>
+                <h1 class="main-title">ĐƯỜNG ĐI CÓ TỔNG NHỎ NHẤT TRÊN LƯỚI</h1>
+                <p class="sub-title">Mô phỏng trực quan thuật toán Quy hoạch động & Truy vết đường đi (Minimum Path Sum Visualizer)</p>
+            </div>
+            <div class="header-student-card">
+                <div class="student-avatar">TN</div>
+                <div class="student-info">
+                    <div class="student-name">Ngô Lê Tấn Nhân</div>
+                    <div class="student-meta">MSSV: <strong>N24DCDT059</strong> • Lớp: <strong>D24CQDT01-N</strong></div>
+                    <div class="student-meta">Học phần: <strong>INT13185 (Nhóm 03)</strong> • GVHD: <strong>Hồ Nhựt Minh</strong></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Presets Bar -->
+        <section class="preset-section">
+            <span class="preset-label">Bộ dữ liệu mẫu:</span>
+            <div class="preset-buttons">
+                <button type="button" class="btn-preset active" id="btnPresetVD1" data-preset="vd1">Ví dụ 1 (3×3 - Sách)</button>
+                <button type="button" class="btn-preset" id="btnPresetVD2" data-preset="vd2">Ví dụ 2 (1×3 - Một hàng)</button>
+                <button type="button" class="btn-preset" id="btnPresetHinh44" data-preset="hinh44">Hình 4.4 Giáo trình (4×4)</button>
+                <button type="button" class="btn-preset" id="btnPreset1Cot" data-preset="cot1">Một cột (3×1)</button>
+                <button type="button" class="btn-preset" id="btnPresetHoa" data-preset="hoa">Hòa 2 nghiệm (2×2)</button>
+                <button type="button" class="btn-preset" id="btnPresetZigZag" data-preset="zigzag">ZigZag ép đường</button>
+                <button type="button" class="btn-preset" id="btnPresetRandom" data-preset="random">🎲 Ngẫu nhiên (Tùy chọn)</button>
+            </div>
+        </section>
+
+        <!-- Controls Toolbar -->
+        <section class="toolbar-section">
+            <div class="grid-size-controls" id="gridSizeControls" style="display: none;">
+                <div class="input-group">
+                    <label for="inputRows">Số hàng (m):</label>
+                    <input type="number" id="inputRows" min="1" max="10" value="4">
+                </div>
+                <div class="input-group">
+                    <label for="inputCols">Số cột (n):</label>
+                    <input type="number" id="inputCols" min="1" max="10" value="5">
+                </div>
+                <div class="input-group">
+                    <label for="selectPattern">Độ khó / Kiểu mẫu:</label>
+                    <select id="selectPattern" class="custom-select">
+                        <option value="challenging">🔥 Thách thức bẫy số (Khó nhằn)</option>
+                        <option value="zigzag">⚡ Mê cung lắt léo (Tường bẫy 99)</option>
+                        <option value="varied">🎲 Đa dạng ngẫu nhiên (0 - 50)</option>
+                        <option value="small">🌱 Số nhỏ nhẹ nhàng (1 - 9)</option>
+                    </select>
+                </div>
+                <button type="button" class="btn-secondary" id="btnApplySize">🎲 Tạo lưới mới</button>
+            </div>
+
+            <div class="preset-fixed-notice" id="presetNotice">
+                <span class="notice-icon">📌</span> Đang xem bộ dữ liệu mẫu cố định của đề tài. Chọn <strong>"🎲 Ngẫu nhiên (Tùy chọn)"</strong> để tùy biến kích thước và tạo các ma trận thách thức mới.
+            </div>
+
+            <div class="action-controls">
+                <button type="button" class="btn-primary" id="btnSolve">
+                    <span class="btn-icon">⚡</span> Giải ngay
+                </button>
+                <button type="button" class="btn-accent" id="btnStepByStep">
+                    <span class="btn-icon">▶</span> Chạy từng bước
+                </button>
+                <button type="button" class="btn-outline" id="btnReset">
+                    <span class="btn-icon">↺</span> Làm mới
+                </button>
+
+                <div class="speed-control">
+                    <label for="rangeSpeed">Tốc độ:</label>
+                    <input type="range" id="rangeSpeed" min="50" max="1000" step="50" value="300">
+                    <span id="speedDisplay">300ms</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Visualizer Area -->
+        <main class="visualizer-container">
+            <!-- Left Panel: Matrix C -->
+            <div class="grid-card">
+                <div class="grid-card-header">
+                    <div class="card-title">
+                        <span class="title-tag blue">ĐẦU VÀO</span>
+                        <h3>Ma trận trọng số ban đầu <span class="no-break">C[i][j]</span></h3>
+                    </div>
+                    <span class="hint-text">💡 Bấm vào ô để sửa giá trị (0 - 99)</span>
+                </div>
+                <div class="grid-wrapper">
+                    <div id="gridC" class="interactive-grid"></div>
+                </div>
+                <div class="grid-footer">
+                    <div class="legend-item"><span class="legend-box start-box"></span> Ô xuất phát (1, 1)</div>
+                    <div class="legend-item"><span class="legend-box end-box"></span> Ô kết thúc (m, n)</div>
+                    <div class="legend-item"><span class="legend-box path-box"></span> Đường đi tối ưu</div>
+                </div>
+            </div>
+
+            <!-- Right Panel: DP Table f[i][j] -->
+            <div class="grid-card">
+                <div class="grid-card-header">
+                    <div class="card-title">
+                        <span class="title-tag green">QUY HOẠCH ĐỘNG</span>
+                        <h3>Bảng phương án tối ưu <span class="no-break">f[i][j]</span></h3>
+                    </div>
+                    <div class="calc-indicator" id="stepStatusIndicator">Sẵn sàng thực thi</div>
+                </div>
+                <div class="grid-wrapper">
+                    <div id="gridF" class="interactive-grid dp-grid"></div>
+                </div>
+                <div class="grid-footer">
+                    <div class="legend-item"><span class="legend-box current-calc-box"></span> Đang tính toán</div>
+                    <div class="legend-item"><span class="legend-box compare-box"></span> So sánh từ ô trên / trái</div>
+                    <div class="legend-item"><span class="legend-box path-dp-box"></span> Ô trên đường truy vết</div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Live Step Explanation Box -->
+        <section class="explanation-section" id="explanationSection">
+            <div class="explanation-header">
+                <span class="icon-bulb">🔍</span>
+                <h4>Chi tiết bước tính toán hiện tại:</h4>
+            </div>
+            <div class="explanation-body" id="explanationText">
+                Nhấn <strong>"Giải ngay"</strong> để tìm đường đi tối ưu ngay lập tức, hoặc nhấn <strong>"Chạy từng bước"</strong> để quan sát quá trình Quy hoạch động điền bảng f[i][j] và lần vết ngược từ đích về xuất phát.
+            </div>
+        </section>
+
+        <!-- Results & Analytics Dashboard -->
+        <section class="results-dashboard">
+            <div class="stat-card highlight">
+                <div class="stat-title">TỔNG CHI PHÍ NHỎ NHẤT</div>
+                <div class="stat-value" id="resultTotalSum">--</div>
+                <div class="stat-desc">Đã tính cả ô (1, 1) và ô (m, n)</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-title">ĐỘ DÀI ĐƯỜNG ĐI (SỐ Ô)</div>
+                <div class="stat-value" id="resultStepCount">--</div>
+                <div class="stat-desc">Công thức: m + n - 1 bước</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-title">BẢN TỐI ƯU BỘ NHỚ 1 HÀNG</div>
+                <div class="stat-value green-text" id="resultOptSpace">--</div>
+                <div class="stat-desc">Không gian O(n) khớp 100%</div>
+            </div>
+
+            <div class="stat-card wide">
+                <div class="stat-title">DANH SÁCH TỌA ĐỘ ĐƯỜNG ĐI TỐI ƯU</div>
+                <div class="path-display-box" id="resultPathDisplay">
+                    Chưa thực thi
+                </div>
+                <div class="path-actions">
+                    <button type="button" class="btn-copy" id="btnCopyPath">📋 Sao chép tọa độ</button>
+                    <span class="copy-success" id="copySuccessMsg">Đã sao chép!</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formula and Educational Reference -->
+        <section class="theory-section">
+            <div class="theory-card">
+                <h3>📐 Cơ sở lý thuyết & Hệ thức truy hồi Quy hoạch động (DT053)</h3>
+                <div class="theory-content">
+                    <div class="formula-block">
+                        <div class="formula-title">Hệ thức truy hồi:</div>
+                        <code>
+                            f[1, 1] = C[1, 1]<br>
+                            f[1, j] = f[1, j-1] + C[1, j] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(hàng đầu, chỉ đi sang phải)<br>
+                            f[i, 1] = f[i-1, 1] + C[i, 1] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(cột đầu, chỉ đi xuống dưới)<br>
+                            f[i, j] = min(f[i-1, j], f[i, j-1]) + C[i, j] &nbsp;(các ô còn lại)
+                        </code>
+                    </div>
+                    <div class="complexity-info">
+                        <ul>
+                            <li><strong>Độ phức tạp thời gian:</strong> O(m × n) (mỗi ô trong m × n ô được tính đúng 1 lần với 1 phép so sánh min).</li>
+                            <li><strong>Độ phức tạp không gian bảng đầy đủ:</strong> O(m × n) (dùng để lưu vết đường đi).</li>
+                            <li><strong>Độ phức tạp không gian bản tối ưu:</strong> O(n) (chỉ giữ 1 hàng trượt nếu chỉ cần biết tổng chi phí).</li>
+                            <li><strong>Độ phức tạp truy vết:</strong> O(m + n) (đi ngược từ (m, n) về (1, 1)).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Bản quyền © 2026 - Ngô Lê Tấn Nhân (MSSV: N24DCDT059) - Đề tài DT053 môn Cấu trúc dữ liệu và giải thuật (INT13185).</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
