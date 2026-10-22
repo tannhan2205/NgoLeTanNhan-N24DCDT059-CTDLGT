@@ -1,0 +1,18 @@
+# Binaries
+*.exe
+*.o
+*.obj
+*.out
+
+# IDE & Editor folders
+.vscode/
+.idea/
+.vs/
+
+# OS generated
+Thumbs.db
+[Dd]esktop.ini
+
+# Helper / Temporary scripts
+*chay_chup_anh*
+*push_to_github*
