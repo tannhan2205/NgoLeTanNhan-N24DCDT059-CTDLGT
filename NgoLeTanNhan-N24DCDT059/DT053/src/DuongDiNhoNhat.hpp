@@ -14,6 +14,7 @@
 #include <algorithm>
 #include <stdexcept>
 #include <string>
+#include <queue>
 
 namespace DT053 {
 
@@ -222,6 +223,153 @@ inline long long tinh_tong_nho_nhat_toi_uu_bo_nho(const MaTran& C) {
     }
 
     return dp[n - 1];
+}
+
+/**
+ * NÂNG CẤP 1: THUẬT TOÁN THAM LAM (GREEDY)
+ * Tại mỗi bước chỉ nhìn cục bộ ô bên phải và ô bên dưới, chọn ô có chi phí nhỏ hơn.
+ * Lưu ý: Tham lam KHÔNG đảm bảo tìm được nghiệm tối ưu toàn cục.
+ */
+struct KetQuaSoSanh {
+    long long tong_chi_phi;
+    std::vector<ToaDo> duong_di;
+    bool toi_uu_toan_cuc;
+};
+
+inline KetQuaSoSanh giai_tham_lam(const MaTran& C, long long tong_dp_toi_uu) {
+    int m = C.size();
+    int n = C[0].size();
+    int i = 0, j = 0;
+    long long tong = C[0][0];
+    std::vector<ToaDo> duong;
+    duong.push_back({1, 1});
+
+    while (i < m - 1 || j < n - 1) {
+        if (i == m - 1) {
+            j++; // Đã chạm đáy, chỉ có thể sang phải
+        } else if (j == n - 1) {
+            i++; // Đã chạm tường phải, chỉ có thể xuống dưới
+        } else {
+            // So sánh ô bên phải C[i][j+1] và ô bên dưới C[i+1][j]
+            if (C[i][j + 1] < C[i + 1][j]) {
+                j++;
+            } else {
+                i++;
+            }
+        }
+        tong += C[i][j];
+        duong.push_back({i + 1, j + 1});
+    }
+
+    return {tong, duong, (tong == tong_dp_toi_uu)};
+}
+
+/**
+ * NÂNG CẤP 2: THUẬT TOÁN DIJKSTRA TRÊN ĐỒ THỊ LƯỚI
+ * Chuyển đổi lưới thành đồ thị có hướng (DAG), tìm đường đi ngắn nhất bằng Priority Queue.
+ * Đảm bảo tìm được tổng chi phí tối ưu, độ phức tạp O(mn * log(mn)).
+ */
+inline KetQuaDuongDi giai_dijkstra(const MaTran& C) {
+    int m = C.size();
+    int n = C[0].size();
+
+    const long long INF = 1e18;
+    std::vector<std::vector<long long>> dist(m, std::vector<long long>(n, INF));
+    std::vector<std::vector<ToaDo>> parent(m, std::vector<ToaDo>(n, {-1, -1}));
+
+    // Priority queue lưu: {chi_phi, {r, c}}
+    using NutPQ = std::pair<long long, std::pair<int, int>>;
+    std::priority_queue<NutPQ, std::vector<NutPQ>, std::greater<NutPQ>> pq;
+
+    dist[0][0] = C[0][0];
+    pq.push({dist[0][0], {0, 0}});
+
+    while (!pq.empty()) {
+        auto top = pq.top();
+        pq.pop();
+        long long d = top.first;
+        int r = top.second.first;
+        int c = top.second.second;
+
+        if (d > dist[r][c]) continue;
+        if (r == m - 1 && c == n - 1) break;
+
+        // Đi sang phải: (r, c + 1)
+        if (c + 1 < n) {
+            if (dist[r][c] + C[r][c + 1] < dist[r][c + 1]) {
+                dist[r][c + 1] = dist[r][c] + C[r][c + 1];
+                parent[r][c + 1] = {r, c};
+                pq.push({dist[r][c + 1], {r, c + 1}});
+            }
+        }
+
+        // Đi xuống dưới: (r + 1, c)
+        if (r + 1 < m) {
+            if (dist[r][c] + C[r + 1][c] < dist[r + 1][c]) {
+                dist[r + 1][c] = dist[r][c] + C[r + 1][c];
+                parent[r + 1][c] = {r, c};
+                pq.push({dist[r + 1][c], {r + 1, c}});
+            }
+        }
+    }
+
+    // Truy vết ngược từ (m-1, n-1)
+    std::vector<ToaDo> duong;
+    int curr_r = m - 1, curr_c = n - 1;
+    while (curr_r >= 0 && curr_c >= 0) {
+        duong.push_back({curr_r + 1, curr_c + 1});
+        if (curr_r == 0 && curr_c == 0) break;
+        ToaDo p = parent[curr_r][curr_c];
+        curr_r = p.first;
+        curr_c = p.second;
+    }
+    std::reverse(duong.begin(), duong.end());
+
+    return {dist[m - 1][n - 1], duong, dist};
+}
+
+/**
+ * NÂNG CẤP 3: TÌM TẤT CẢ CÁC ĐƯỜNG ĐI TỐI ƯU CÙNG TỔNG NHỎ NHẤT (DFS trên bảng f)
+ */
+inline void dfs_tat_ca_duong(int i, int j, const std::vector<std::vector<long long>>& f, 
+                             std::vector<ToaDo>& duong_hien_tai, 
+                             std::vector<std::vector<ToaDo>>& ket_qua, int max_paths = 20) {
+    if (ket_qua.size() >= (size_t)max_paths) return;
+
+    duong_hien_tai.push_back({i + 1, j + 1});
+
+    if (i == 0 && j == 0) {
+        auto duong_thuan = duong_hien_tai;
+        std::reverse(duong_thuan.begin(), duong_thuan.end());
+        ket_qua.push_back(duong_thuan);
+        duong_hien_tai.pop_back();
+        return;
+    }
+
+    if (i > 0 && j > 0) {
+        long long min_val = std::min(f[i - 1][j], f[i][j - 1]);
+        if (f[i - 1][j] == min_val) {
+            dfs_tat_ca_duong(i - 1, j, f, duong_hien_tai, ket_qua, max_paths);
+        }
+        if (f[i][j - 1] == min_val) {
+            dfs_tat_ca_duong(i, j - 1, f, duong_hien_tai, ket_qua, max_paths);
+        }
+    } else if (i > 0) {
+        dfs_tat_ca_duong(i - 1, j, f, duong_hien_tai, ket_qua, max_paths);
+    } else if (j > 0) {
+        dfs_tat_ca_duong(i, j - 1, f, duong_hien_tai, ket_qua, max_paths);
+    }
+
+    duong_hien_tai.pop_back();
+}
+
+inline std::vector<std::vector<ToaDo>> tim_tat_ca_duong_toi_uu(const MaTran& C, const std::vector<std::vector<long long>>& f) {
+    int m = C.size();
+    int n = C[0].size();
+    std::vector<std::vector<ToaDo>> danh_sach;
+    std::vector<ToaDo> temp;
+    dfs_tat_ca_duong(m - 1, n - 1, f, temp, danh_sach);
+    return danh_sach;
 }
 
 } // namespace DT053

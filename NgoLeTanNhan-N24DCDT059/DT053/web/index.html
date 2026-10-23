@@ -83,6 +83,15 @@
                 <button type="button" class="btn-outline" id="btnReset">
                     <span class="btn-icon">↺</span> Làm mới
                 </button>
+                <button type="button" class="btn-outline" id="btnHeatmap" title="Bật/Tắt bản đồ nhiệt chi phí">
+                    <span class="btn-icon">🌡️</span> Heatmap
+                </button>
+                <button type="button" class="btn-outline" id="btnAllPaths" title="Tìm và hiển thị tất cả các đường đi tối ưu">
+                    <span class="btn-icon">🔀</span> Tất cả đường
+                </button>
+                <button type="button" class="btn-outline" id="btnExportCSV" title="Xuất kết quả ma trận ra tệp CSV">
+                    <span class="btn-icon">💾</span> Xuất CSV
+                </button>
 
                 <div class="speed-control">
                     <label for="rangeSpeed">Tốc độ:</label>
@@ -172,6 +181,75 @@
                 <div class="path-actions">
                     <button type="button" class="btn-copy" id="btnCopyPath">📋 Sao chép tọa độ</button>
                     <span class="copy-success" id="copySuccessMsg">Đã sao chép!</span>
+                </div>
+            </div>
+            <div class="stat-card wide" id="allPathsContainer" style="display: none;">
+                <div class="stat-title">TẤT CẢ CÁC ĐƯỜNG ĐI CÓ CÙNG TỔNG NHỎ NHẤT</div>
+                <div id="allPathsList" class="all-paths-content"></div>
+            </div>
+        </section>
+
+        <!-- Algorithm Comparison Section -->
+        <section class="comparison-section" id="comparisonSection">
+            <div class="theory-card">
+                <h3>⚡ So sánh hiệu năng 3 Thuật toán trên cùng Lưới C</h3>
+                <div class="comparison-grid">
+                    <!-- Greedy -->
+                    <div class="compare-card greedy-card">
+                        <div class="compare-badge warn-badge">Tham lam (Greedy)</div>
+                        <h4>Chỉ nhìn ô kề (Cục bộ)</h4>
+                        <p class="compare-desc">Tại mỗi bước chỉ chọn min(Phải, Dưới). Cực nhanh nhưng dễ rơi vào bẫy chi phí.</p>
+                        <div class="compare-stat">
+                            <span>Tổng chi phí:</span>
+                            <strong id="greedySum">--</strong>
+                        </div>
+                        <div class="compare-stat">
+                            <span>Độ phức tạp:</span>
+                            <code>T: O(m+n), S: O(1)</code>
+                        </div>
+                        <div class="compare-stat">
+                            <span>Tối ưu toàn cục?</span>
+                            <span id="greedyOptStatus" class="status-tag">Chưa tính</span>
+                        </div>
+                    </div>
+
+                    <!-- DP -->
+                    <div class="compare-card dp-card">
+                        <div class="compare-badge success-badge">Quy hoạch động (DP) ⭐</div>
+                        <h4>Đề tài DT053 (Chính xác)</h4>
+                        <p class="compare-desc">Duyệt có hệ thống từ (1,1) đến (m,n). Lưu vết trạng thái f[i,j] đảm bảo tối ưu toàn cục.</p>
+                        <div class="compare-stat">
+                            <span>Tổng chi phí:</span>
+                            <strong id="dpSum" class="green-text">--</strong>
+                        </div>
+                        <div class="compare-stat">
+                            <span>Độ phức tạp:</span>
+                            <code>T: O(m×n), S: O(m×n)/O(n)</code>
+                        </div>
+                        <div class="compare-stat">
+                            <span>Tối ưu toàn cục?</span>
+                            <span class="status-tag tag-opt">✅ Luôn đạt tối ưu</span>
+                        </div>
+                    </div>
+
+                    <!-- Dijkstra -->
+                    <div class="compare-card dijkstra-card">
+                        <div class="compare-badge blue-badge">Thuật toán Dijkstra</div>
+                        <h4>Hàng đợi ưu tiên (Priority Queue)</h4>
+                        <p class="compare-desc">Xem lưới như đồ thị có hướng (DAG), mở rộng theo khoảng cách nhỏ nhất dần dần.</p>
+                        <div class="compare-stat">
+                            <span>Tổng chi phí:</span>
+                            <strong id="dijkstraSum" class="blue-text">--</strong>
+                        </div>
+                        <div class="compare-stat">
+                            <span>Độ phức tạp:</span>
+                            <code>T: O(mn log mn), S: O(mn)</code>
+                        </div>
+                        <div class="compare-stat">
+                            <span>Tối ưu toàn cục?</span>
+                            <span class="status-tag tag-opt">✅ Luôn đạt tối ưu</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
