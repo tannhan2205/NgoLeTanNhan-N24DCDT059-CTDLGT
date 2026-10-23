@@ -594,3 +594,244 @@ function stopAnimation() {
         state.timerId = null;
     }
 }
+
+// ==========================================================================
+// CÁC TÍNH NĂNG NÂNG CAO MỞ RỘNG
+// ==========================================================================
+
+// 1. Thuật toán Tham lam (Greedy)
+function solveGreedy() {
+    let i = 0, j = 0;
+    let sum = state.C[0][0];
+    const path = [{ r: 1, c: 1 }];
+
+    while (i < state.m - 1 || j < state.n - 1) {
+        if (i === state.m - 1) {
+            j++;
+        } else if (j === state.n - 1) {
+            i++;
+        } else {
+            if (state.C[i][j + 1] < state.C[i + 1][j]) {
+                j++;
+            } else {
+                i++;
+            }
+        }
+        sum += state.C[i][j];
+        path.push({ r: i + 1, c: j + 1 });
+    }
+    return { sum, path };
+}
+
+// 2. Thuật toán Dijkstra trên lưới
+function solveDijkstra() {
+    const m = state.m;
+    const n = state.n;
+    const dist = Array.from({ length: m }, () => Array(n).fill(Infinity));
+    const parent = Array.from({ length: m }, () => Array(n).fill(null));
+    const visited = Array.from({ length: m }, () => Array(n).fill(false));
+
+    dist[0][0] = state.C[0][0];
+
+    for (let step = 0; step < m * n; step++) {
+        let minDist = Infinity;
+        let u = -1, v = -1;
+
+        for (let r = 0; r < m; r++) {
+            for (let c = 0; c < n; c++) {
+                if (!visited[r][c] && dist[r][c] < minDist) {
+                    minDist = dist[r][c];
+                    u = r;
+                    v = c;
+                }
+            }
+        }
+
+        if (u === -1 || (u === m - 1 && v === n - 1)) break;
+        visited[u][v] = true;
+
+        // Đi sang phải
+        if (v + 1 < n && dist[u][v] + state.C[u][v + 1] < dist[u][v + 1]) {
+            dist[u][v + 1] = dist[u][v] + state.C[u][v + 1];
+            parent[u][v + 1] = { r: u, c: v };
+        }
+        // Đi xuống dưới
+        if (u + 1 < m && dist[u][v] + state.C[u + 1][v] < dist[u + 1][v]) {
+            dist[u + 1][v] = dist[u][v] + state.C[u + 1][v];
+            parent[u + 1][v] = { r: u, c: v };
+        }
+    }
+
+    const path = [];
+    let cur = { r: m - 1, c: n - 1 };
+    while (cur) {
+        path.push({ r: cur.r + 1, c: cur.c + 1 });
+        cur = parent[cur.r][cur.c];
+    }
+    path.reverse();
+
+    return { sum: dist[m - 1][n - 1], path };
+}
+
+// 3. Tìm tất cả các đường đi tối ưu (DFS trên bảng f)
+function findAllOptimalPaths() {
+    if (!state.f || state.f.length === 0) return [];
+    const allPaths = [];
+
+    function dfs(i, j, currentPath) {
+        if (allPaths.length >= 20) return;
+        currentPath.push({ r: i + 1, c: j + 1 });
+
+        if (i === 0 && j === 0) {
+            allPaths.push([...currentPath].reverse());
+            currentPath.pop();
+            return;
+        }
+
+        if (i > 0 && j > 0) {
+            const minVal = Math.min(state.f[i - 1][j], state.f[i][j - 1]);
+            if (state.f[i - 1][j] === minVal) dfs(i - 1, j, currentPath);
+            if (state.f[i][j - 1] === minVal) dfs(i, j - 1, currentPath);
+        } else if (i > 0) {
+            dfs(i - 1, j, currentPath);
+        } else if (j > 0) {
+            dfs(i, j - 1, currentPath);
+        }
+
+        currentPath.pop();
+    }
+
+    dfs(state.m - 1, state.n - 1, []);
+    return allPaths;
+}
+
+// Cập nhật thẻ So sánh thuật toán
+function updateAlgorithmComparison(dpTotal) {
+    const greedy = solveGreedy();
+    const dijkstra = solveDijkstra();
+
+    const greedySumEl = document.getElementById('greedySum');
+    const greedyOptStatusEl = document.getElementById('greedyOptStatus');
+    const dpSumEl = document.getElementById('dpSum');
+    const dijkstraSumEl = document.getElementById('dijkstraSum');
+
+    if (greedySumEl) greedySumEl.textContent = greedy.sum;
+    if (dpSumEl) dpSumEl.textContent = dpTotal;
+    if (dijkstraSumEl) dijkstraSumEl.textContent = dijkstra.sum;
+
+    if (greedyOptStatusEl) {
+        if (greedy.sum === dpTotal) {
+            greedyOptStatusEl.textContent = '✅ Trùng tối ưu';
+            greedyOptStatusEl.className = 'status-tag tag-opt';
+        } else {
+            greedyOptStatusEl.textContent = '❌ Kém hơn (+ ' + (greedy.sum - dpTotal) + ')';
+            greedyOptStatusEl.className = 'status-tag tag-subopt';
+        }
+    }
+}
+
+// Toggle Heatmap
+let heatmapActive = false;
+function toggleHeatmap() {
+    heatmapActive = !heatmapActive;
+    const btnHeatmap = document.getElementById('btnHeatmap');
+    if (btnHeatmap) {
+        btnHeatmap.classList.toggle('active', heatmapActive);
+    }
+
+    if (!state.f || state.f.length === 0) {
+        solveInstant();
+    }
+
+    let minVal = Infinity, maxVal = -Infinity;
+    for (let i = 0; i < state.m; i++) {
+        for (let j = 0; j < state.n; j++) {
+            minVal = Math.min(minVal, state.f[i][j]);
+            maxVal = Math.max(maxVal, state.f[i][j]);
+        }
+    }
+
+    const range = Math.max(1, maxVal - minVal);
+
+    for (let i = 0; i < state.m; i++) {
+        for (let j = 0; j < state.n; j++) {
+            const cellF = document.getElementById(`cell_F_${i}_${j}`);
+            if (!cellF) continue;
+            cellF.classList.remove('heat-low', 'heat-mid', 'heat-high');
+
+            if (heatmapActive) {
+                const ratio = (state.f[i][j] - minVal) / range;
+                if (ratio < 0.33) cellF.classList.add('heat-low');
+                else if (ratio < 0.66) cellF.classList.add('heat-mid');
+                else cellF.classList.add('heat-high');
+            }
+        }
+    }
+}
+
+// Toggle Tất cả đường tối ưu
+function toggleAllPaths() {
+    const container = document.getElementById('allPathsContainer');
+    const listEl = document.getElementById('allPathsList');
+    if (!container || !listEl) return;
+
+    if (container.style.display === 'none') {
+        if (!state.f || state.f.length === 0) solveInstant();
+        const paths = findAllOptimalPaths();
+        listEl.innerHTML = '';
+
+        paths.forEach((p, idx) => {
+            const item = document.createElement('div');
+            item.className = 'path-item';
+            item.textContent = `Đường #${idx + 1}: [${p.map(pt => `(${pt.r}, ${pt.c})`).join(' → ')}]`;
+            listEl.appendChild(item);
+        });
+
+        container.style.display = 'block';
+    } else {
+        container.style.display = 'none';
+    }
+}
+
+// Xuất CSV ma trận và kết quả
+function exportCSV() {
+    if (!state.f || state.f.length === 0) solveInstant();
+    let csv = "DATA MA TRAN BAN DAU C[i][j]\n";
+    for (let i = 0; i < state.m; i++) {
+        csv += state.C[i].join(",") + "\n";
+    }
+    csv += "\nBANG PHUONG AN QUY HOACH DONG f[i][j]\n";
+    for (let i = 0; i < state.m; i++) {
+        csv += state.f[i].join(",") + "\n";
+    }
+    csv += "\nKET QUA DUONG DI TOI UU\n";
+    csv += `Tong chi phi: ${state.f[state.m - 1][state.n - 1]}\n`;
+    csv += `Duong di: ${state.path.map(p => `(${p.r};${p.c})`).join(" -> ")}\n`;
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = `DT053_NgoLeTanNhan_${state.m}x${state.n}.csv`;
+    link.click();
+}
+
+// Gán sự kiện khi trang đã tải
+window.addEventListener('DOMContentLoaded', () => {
+    const btnHeatmap = document.getElementById('btnHeatmap');
+    if (btnHeatmap) btnHeatmap.addEventListener('click', toggleHeatmap);
+
+    const btnAllPaths = document.getElementById('btnAllPaths');
+    if (btnAllPaths) btnAllPaths.addEventListener('click', toggleAllPaths);
+
+    const btnExportCSV = document.getElementById('btnExportCSV');
+    if (btnExportCSV) btnExportCSV.addEventListener('click', exportCSV);
+});
+
+// Hook vào hàm solveInstant để tự động cập nhật so sánh giải thuật
+const originalSolveInstant = solveInstant;
+solveInstant = function() {
+    originalSolveInstant();
+    if (state.f && state.f.length > 0) {
+        updateAlgorithmComparison(state.f[state.m - 1][state.n - 1]);
+    }
+};

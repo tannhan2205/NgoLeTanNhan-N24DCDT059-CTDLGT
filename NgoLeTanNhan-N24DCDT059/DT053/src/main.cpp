@@ -83,7 +83,8 @@ int main(int argc, char* argv[]) {
     std::cout << "  1. Chay Vi du 1 (C = [1 3 1; 1 5 1; 4 2 1])\n";
     std::cout << "  2. Chay Vi du 2 (C = [2 4 1])\n";
     std::cout << "  3. Nhap ma tran tuy y tu ban phim\n";
-    std::cout << "Nhap lua chon (1/2/3): ";
+    std::cout << "  4. [NANG CAO] So sanh 3 thuat toan (DP vs Tham Lam vs Dijkstra) & Tim tat ca duong toi uu\n";
+    std::cout << "Nhap lua chon (1/2/3/4): ";
 
     int choice = 1;
     if (!(std::cin >> choice)) {
@@ -104,6 +105,40 @@ int main(int argc, char* argv[]) {
         std::cout << "\n";
         in_bang_quy_hoach_dong(kq.f);
         in_ket_qua(kq);
+    } else if (choice == 4) {
+        std::cout << "\n=== [CHAY SO SANH 3 THUAT TOAN TREN LUOI MAU 3x3] ===\n";
+        MaTran C = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
+        in_ma_tran(C);
+
+        // 1. Quy hoạch động
+        auto kq_dp = duong_di_nho_nhat(C);
+        std::cout << "\n[1] QUY HOACH DONG (DP - DT053):\n";
+        std::cout << "    - Tong chi phi toi uu: " << kq_dp.tong_chi_phi << "\n";
+        std::cout << "    - "; in_ket_qua(kq_dp);
+
+        // 2. Tham lam (Greedy)
+        auto kq_greedy = giai_tham_lam(C, kq_dp.tong_chi_phi);
+        std::cout << "\n[2] THAM LAM (GREEDY - Cuc bo):\n";
+        std::cout << "    - Tong chi phi: " << kq_greedy.tong_chi_phi << "\n";
+        std::cout << "    - Toi uu toan cuc? " << (kq_greedy.toi_uu_toan_cuc ? "CO" : "KHONG (Bi bay chi phi!)") << "\n";
+
+        // 3. Dijkstra
+        auto kq_dijkstra = giai_dijkstra(C);
+        std::cout << "\n[3] DIJKSTRA (Priority Queue):\n";
+        std::cout << "    - Tong chi phi: " << kq_dijkstra.tong_chi_phi << " (Khop hoan toan voi DP)\n";
+
+        // 4. Tìm tất cả đường đi
+        auto all_paths = tim_tat_ca_duong_toi_uu(C, kq_dp.f);
+        std::cout << "\n[4] TIM TAT CA CAC DUONG TOI UU (Cung dat tong = " << kq_dp.tong_chi_phi << "):\n";
+        std::cout << "    - So luong duong toi uu tim duoc: " << all_paths.size() << "\n";
+        for (size_t p = 0; p < all_paths.size(); ++p) {
+            std::cout << "      Duong " << p + 1 << ": [";
+            for (size_t k = 0; k < all_paths[p].size(); ++k) {
+                std::cout << "(" << all_paths[p][k].first << ", " << all_paths[p][k].second << ")";
+                if (k + 1 < all_paths[p].size()) std::cout << ", ";
+            }
+            std::cout << "]\n";
+        }
     } else {
         int m, n;
         std::cout << "Nhap so hang m (1 <= m <= 10): ";
