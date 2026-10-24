@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 5 · Thực hành cấu trúc dữ liệu</title>
+<link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<a class="skip" href="#main">Đi tới nội dung</a>
+<header><div class="brand"><span class="chapter">05</span><div><strong>Cấu trúc dữ liệu</strong><small>Danh sách liên kết · Ngăn xếp · Hàng đợi</small></div></div><div class="badges"><span id="language">Đang kết nối</span><span id="edition">Bài thực hành</span><button id="refresh">Đọc lại trạng thái</button></div></header>
+<div class="layout">
+<aside><div class="overline">THỰC HÀNH</div><nav aria-label="Chọn cấu trúc">
+<button data-tab="list" aria-pressed="true">01 <span>Danh sách liên kết</span></button>
+<button data-tab="stack" aria-pressed="false">02 <span>Ngăn xếp</span></button>
+<button data-tab="queue" aria-pressed="false">03 <span>Hàng đợi vòng</span></button>
+<button data-tab="brackets" aria-pressed="false">04 <span>Kiểm tra ngoặc</span></button></nav>
+<div class="aside-note"><strong>Cách thực hành</strong><p>Nhập dữ liệu, dự đoán kết quả, rồi bấm thao tác. So sánh trạng thái trước và sau.</p><p>Thuật toán chạy trong Python hoặc Julia. Trình duyệt chỉ gửi lệnh và hiển thị kết quả.</p></div>
+<div class="aside-note"><strong>Bài tập 7 ngày</strong><p>Bốn nút có nhãn <b>Bài tập</b> gọi trực tiếp các hàm trong <code>bai_lam.py</code> hoặc <code>BaiLam.jl</code>.</p><p id="edition-note"></p></div>
+<button id="export">Xuất nhật ký JSON</button><button id="reset-all" class="subtle">Khôi phục dữ liệu mẫu</button>
+<small class="aside-foot">Mỗi máy chủ dùng một bộ dữ liệu chung cho các tab đang mở. Dừng chương trình sẽ mất trạng thái.</small></aside>
+<main id="main">
+<div id="connection" role="alert" hidden></div>
+<div class="heading"><div class="overline">CHƯƠNG 5 / PHÒNG THỰC HÀNH</div><h1 id="title">Danh sách liên kết đơn</h1><p id="intro">Dữ liệu nằm trong các nút; thứ tự được quyết định bởi liên kết ke.</p></div>
+<section class="workspace" id="panel-list" aria-label="Thao tác danh sách">
+<div class="config"><label class="grow">Dãy ban đầu, ngăn cách bằng dấu phẩy<input id="list-values" value="10, 20, 30" placeholder="Ví dụ: 10, 20, 20, 30"></label><button id="list-reset">Tạo danh sách</button><button id="list-empty">Danh sách rỗng</button></div>
+<div class="controls"><label>Giá trị x<input id="list-x" type="number" value="25" step="1" min="-1000000" max="1000000"></label><button data-op="list.prepend">Thêm đầu</button><button data-op="list.append">Thêm cuối</button><button data-op="list.find">Tìm x</button><button data-op="list.delete">Xoá một x</button><button data-op="list.reverse">Đảo danh sách</button></div>
+<div class="controls secondary"><label>Chèn sau giá trị<input id="list-target" type="number" value="20" step="1"></label><button data-op="list.insert">Chèn x sau nút</button><span class="help">Nếu có giá trị trùng, chọn nút xuất hiện đầu tiên.</span></div>
+<div class="controls homework"><span class="tag">Bài tập</span><button data-op="list.count">Đếm x</button><button data-op="list.delete_all">Xoá tất cả x</button><small>Thực hiện trong tệp bài làm, không sửa JavaScript để giả kết quả.</small></div></section>
+<section class="workspace" id="panel-stack" hidden aria-label="Thao tác ngăn xếp">
+<div class="controls"><label>Giá trị x<input id="stack-x" type="number" value="10" step="1"></label><button data-op="stack.push">Đẩy vào đỉnh</button><button data-op="stack.pop">Lấy đỉnh</button><button data-op="stack.peek">Xem đỉnh</button><button data-op="stack.empty">Kiểm tra rỗng</button><button data-op="stack.reset" class="subtle">Làm rỗng</button></div>
+<div class="controls homework"><span class="tag">Bài tập</span><label>Số lượng k<input id="stack-k" type="number" value="2" step="1"></label><button data-op="stack.pop_many">Lấy k phần tử</button><small>k không hợp lệ: báo lỗi và giữ nguyên ngăn xếp.</small></div></section>
+<section class="workspace" id="panel-queue" hidden aria-label="Thao tác hàng đợi">
+<div class="config"><label>Sức chứa n<input id="queue-capacity" type="number" value="5" min="1" max="12" step="1"></label><button id="queue-reset">Tạo hàng đợi rỗng</button><small>Thay sức chứa sẽ xoá dữ liệu hàng đợi hiện tại.</small></div>
+<div class="controls"><label>Giá trị x<input id="queue-x" type="number" value="10" step="1"></label><button data-op="queue.enqueue">Thêm cuối hàng</button><button data-op="queue.dequeue">Lấy đầu hàng</button><button data-op="queue.peek">Xem đầu hàng</button><button data-op="queue.empty">Kiểm tra rỗng</button></div>
+<div class="controls homework"><span class="tag">Bài tập</span><label>Số lượng k<input id="queue-k" type="number" value="2" step="1"></label><button data-op="queue.peek_k">Xem k phần tử đầu</button><small>Chỉ đọc theo FIFO; không sửa mảng, dau hoặc so.</small></div></section>
+<section class="workspace" id="panel-brackets" hidden aria-label="Kiểm tra dấu ngoặc">
+<div class="config"><label class="grow">Chuỗi cần kiểm tra, tối đa 200 ký tự<input id="brackets-text" maxlength="200" value="(a+[b*c])-{d/e}"></label><button data-op="brackets.check">Kiểm tra ngoặc</button></div>
+<div class="controls"><button data-example="(a+[b*c])-{d/e}">Ví dụ đúng</button><button data-example="([)]">Sai thứ tự</button><button data-example="(()">Thiếu ngoặc đóng</button><button data-example=")(">Đóng trước mở</button></div>
+<p class="panel-note">Chỉ kiểm tra (), [], {}. Bỏ qua ký tự khác; không đánh giá cú pháp hay giá trị biểu thức.</p></section>
+<div class="workgrid"><section class="card visualization"><div class="card-head"><h2>Trạng thái hiện tại</h2><span id="count" class="stat"></span></div><div id="visual" aria-live="polite"></div><p id="visual-note" class="muted"></p><div id="queue-info" hidden></div></section>
+<section class="card explanation"><div class="card-head"><h2>Kết quả và giải thích</h2></div><div id="feedback" role="status">Chọn một thao tác để bắt đầu.</div><div id="result" class="result">Chưa có giá trị trả về.</div><ol id="steps"><li>Quan sát cấu trúc dữ liệu trước khi thực hiện.</li><li>Giải thích vì sao kết quả thay đổi hoặc không thay đổi.</li></ol><p class="muted">Đây là diễn giải của thao tác, không phải phép đo thời gian thực thi.</p></section></div>
+<section class="card" id="trace-card" hidden><div class="card-head"><h2>Lần vết kiểm tra ngoặc</h2><span id="trace-counter"></span></div><div class="trace-controls"><button id="trace-prev">Bước trước</button><button id="trace-next">Bước tiếp</button><button id="trace-play">Tự chạy</button><button id="trace-first">Về đầu</button></div><p id="trace-note"></p><div class="table-scroll"><table><thead><tr><th>Vị trí</th><th>Ký tự</th><th>Ngăn xếp: đáy → đỉnh</th><th>Giải thích</th></tr></thead><tbody id="trace-body"></tbody></table></div></section>
+<section class="card"><div class="card-head"><h2>Đối chiếu trước và sau</h2><small>Ghi lại trạng thái, không chỉ chụp nút bấm</small></div><div class="comparison"><div><h3>Trước thao tác</h3><pre id="before">Chưa thực hiện thao tác.</pre></div><div><h3>Sau thao tác</h3><pre id="after">Chưa thực hiện thao tác.</pre></div></div></section>
+<section class="card"><div class="card-head"><h2>Nhật ký thao tác</h2><small id="history-count">0 thao tác</small></div><p class="muted">Giữ tối đa 200 thao tác gần nhất trong tab này. Nhật ký không tự lưu khi đóng hoặc tải lại trang.</p><div class="table-scroll"><table><thead><tr><th>Lần</th><th>Thao tác</th><th>Kết quả</th></tr></thead><tbody id="history"></tbody></table></div></section>
+<footer>Thuật toán theo mục 5.3–5.5 của Chương 5. Giao diện, kiểm tra đầu vào và bài tập mở rộng là phần thực hành bổ sung.</footer>
+</main></div></body></html>

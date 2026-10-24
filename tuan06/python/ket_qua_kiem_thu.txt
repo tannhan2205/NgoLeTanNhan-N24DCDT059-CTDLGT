@@ -1,0 +1,22 @@
+test_danh_sach_ngau_nhien_co_seed (__main__.TestBaiTap.test_danh_sach_ngau_nhien_co_seed) ... ok
+test_dem_khong_co (__main__.TestBaiTap.test_dem_khong_co) ... ok
+test_dem_rong (__main__.TestBaiTap.test_dem_rong) ... ok
+test_dem_trung_khong_doi (__main__.TestBaiTap.test_dem_trung_khong_doi) ... ok
+test_lay_nhieu_het (__main__.TestBaiTap.test_lay_nhieu_het) ... ok
+test_lay_nhieu_k_sai_khong_doi (__main__.TestBaiTap.test_lay_nhieu_k_sai_khong_doi) ... ok
+test_lay_nhieu_khong (__main__.TestBaiTap.test_lay_nhieu_khong) ... ok
+test_lay_nhieu_rong (__main__.TestBaiTap.test_lay_nhieu_rong) ... ok
+test_lay_nhieu_thu_tu (__main__.TestBaiTap.test_lay_nhieu_thu_tu) ... ok
+test_xem_k_khong_va_het (__main__.TestBaiTap.test_xem_k_khong_va_het) ... ok
+test_xem_k_quay_vong (__main__.TestBaiTap.test_xem_k_quay_vong) ... ok
+test_xem_k_rong (__main__.TestBaiTap.test_xem_k_rong) ... ok
+test_xem_k_sai_khong_doi (__main__.TestBaiTap.test_xem_k_sai_khong_doi) ... ok
+test_xoa_het (__main__.TestBaiTap.test_xoa_het) ... ok
+test_xoa_khong_co (__main__.TestBaiTap.test_xoa_khong_co) ... ok
+test_xoa_lien_tiep_va_giu_nut_con_lai (__main__.TestBaiTap.test_xoa_lien_tiep_va_giu_nut_con_lai) ... ok
+test_xoa_rong (__main__.TestBaiTap.test_xoa_rong) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.004s
+
+OK
