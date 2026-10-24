@@ -1,0 +1,78 @@
+﻿THỰC HÀNH CHƯƠNG 3. BÀI TOÁN DUYỆT
+Thời gian thực hiện: 07:00–10:00. Hình thức: cá nhân.
+
+BẮT ĐẦU TỪ ĐÂU?
+1. Giải nén toàn bộ gói này vào C:\TH_Chuong3 trên Windows.
+   Sau khi giải nén, trong thư mục đó phải nhìn thấy tệp Word và
+   các tệp bai1_nhi_phan, bai2_ha_noi, bai3_hoan_vi với phần mở rộng.
+   Không chạy chương trình khi tệp vẫn nằm bên trong ZIP.
+
+2. Mở Phieu_ThucHanh_Chuong3_ChiTiet_TungBuoc.docx.
+   Dùng Save As để lưu báo cáo cá nhân theo tên:
+   MSSV_HoTenKhongDau_ThucHanh_Chuong3.docx
+
+3. CHỈ CHỌN MỘT NGÔN NGỮ: Python, Julia hoặc C++.
+   Ba bài đều có đủ mã bằng cả ba ngôn ngữ để tham khảo.
+   Không bắt buộc cài hoặc chạy cả ba ngôn ngữ trong buổi học.
+   Cần chuẩn bị ít nhất một môi trường hoạt động trước giờ thực hành.
+
+4. Điền R0 ở đầu phiếu.
+   d là chữ số cuối MSSV.
+   s là mã ca từ 1 đến 6 do giảng viên giao, không tự chọn.
+   Dùng bảng tra trong R0 để xác định dữ liệu của từng bài.
+   Nếu chưa được giao s, báo giảng viên trước phần cá nhân.
+
+5. Đọc trang hướng dẫn chạy của ngôn ngữ đã chọn.
+   Làm Bài 1, Bài 2, Bài 3 theo các bước trong Word.
+   Mở tệp mã mẫu tương ứng bằng trình soạn thảo mã.
+   Có thể dùng trực tiếp mã trong các tệp này hoặc sao chép toàn bộ
+   khối mã tương ứng ở cuối Word. Hai bản mã giống nhau.
+
+PHÂN BIỆT BA NƠI NHẬP
+- Mã nguồn: dán vào tệp .py, .jl hoặc .cpp trong trình soạn thảo.
+- Lệnh chạy: nhập trong PowerShell hoặc terminal thích hợp.
+- Dữ liệu n: chỉ gõ một số sau khi chương trình hỏi "Nhap n".
+  Ví dụ gõ 3 rồi Enter; không gõ n=3, không gõ dấu nháy.
+  Muốn nhập số khác, chạy lại chương trình. Mỗi lần chạy nhận một n.
+
+TÊN CÁC CHƯƠNG TRÌNH MẪU
+Bài 1:
+  bai1_nhi_phan.py
+  bai1_nhi_phan.jl
+  bai1_nhi_phan.cpp
+Bài 2:
+  bai2_ha_noi.py
+  bai2_ha_noi.jl
+  bai2_ha_noi.cpp
+Bài 3:
+  bai3_hoan_vi.py
+  bai3_hoan_vi.jl
+  bai3_hoan_vi.cpp
+
+GIỮ MÃ MẪU VÀ TẠO BẢN CÁ NHÂN
+Dùng Save As để tạo bai1_ca_nhan, bai2_ca_nhan, bai3_ca_nhan
+với đúng phần mở rộng của ngôn ngữ đã chọn.
+Thay DIEN_MSSV và DIEN_MA_CA trong dòng in bằng thông tin của mình.
+Dự đoán trước khi chạy bản cá nhân; giữ lại dự đoán dù chưa đúng.
+Điền kết quả thực tế, phần giải thích và minh chứng vào R1, R2, R3.
+
+R4 chỉ yêu cầu một thử lỗi trên bản sao riêng của mã MẪU CHƯA LỌC.
+Đọc đúng trường hợp s chẵn hoặc s lẻ. Khôi phục dòng thử trước khi nộp.
+R5 được giao lúc 09:30 và thực hiện dưới sự giám sát của giảng viên.
+
+NỘP BÀI
+Nộp trước 10:00:
+- Một tệp Word đã điền.
+- Một ZIP mã nguồn của ngôn ngữ đã chọn theo hướng dẫn cuối phiếu.
+Không cần nộp tệp .exe, bộ cài hoặc mã của hai ngôn ngữ không thực hiện.
+Kết quả mẫu trong tài liệu chỉ để đối chiếu, không phải minh chứng cá nhân.
+
+LƯU Ý VỀ KIỂM THỬ
+Mã Python và C++ đã được thực thi trên Linux trong quá trình biên soạn.
+154 ca kiểm thử của bản mẫu, dữ liệu vào, các thay đổi được hướng dẫn
+và thử lỗi có kiểm soát đều đạt trong môi trường đó.
+Ba chương trình Julia được rà soát nhưng chưa được thực thi trong
+môi trường biên soạn. Cần chạy xác nhận trên máy lớp trước khi dùng
+Julia để đánh giá. Chưa có kiểm thử thực thi trực tiếp trên Windows/macOS.
+
+Gói sinh viên không chứa đáp án nhiệm vụ trực tiếp dành cho giảng viên.
