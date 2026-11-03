@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DT022 - Đếm số phần tử nhỏ hơn x bằng Tìm kiếm nhị phân | Ngô Lê Tấn Nhân</title>
+    <meta name="description" content="Mô phỏng trực quan thuật toán Tìm kiếm nhị phân đếm số phần tử nhỏ hơn x và xác định vị trí biên đầu tiên >= x - Đề tài DT022 - INT13185">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <div class="badge-topic">ĐỀ TÀI DT022</div>
+                <h1 class="main-title">ĐẾM SỐ PHẦN TỬ NHỎ HƠN X BẰNG TÌM KIẾM NHỊ PHÂN</h1>
+                <p class="sub-title">Mô phỏng trực quan thuật toán Tìm kiếm nhị phân & Xác định biên phân tách (Binary Search Boundary Visualizer)</p>
+            </div>
+            <div class="header-student-card">
+                <div class="student-avatar">TN</div>
+                <div class="student-info">
+                    <div class="student-name">Ngô Lê Tấn Nhân</div>
+                    <div class="student-meta">MSSV: <strong>N24DCDT059</strong> • Lớp: <strong>D24CQDT01-N</strong></div>
+                    <div class="student-meta">Học phần: <strong>INT13185 (Nhóm 03)</strong> • GVHD: <strong>ThS. Hồ Nhựt Minh</strong></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Presets Bar -->
+        <section class="preset-section">
+            <span class="preset-label">Bộ dữ liệu mẫu:</span>
+            <div class="preset-buttons">
+                <button type="button" class="btn-preset active" id="btnPresetVD1" data-preset="vd1">Ví dụ 1 ([1, 2, 2, 4], x=2)</button>
+                <button type="button" class="btn-preset" id="btnPresetVD2" data-preset="vd2">Ví dụ 2 ([1, 2, 2, 4], x=5)</button>
+                <button type="button" class="btn-preset" id="btnPresetNhoHonMin" data-preset="min">x &lt; Min ([1, 2, 2, 4], x=0)</button>
+                <button type="button" class="btn-preset" id="btnPresetToanTrung" data-preset="trung">Toàn trùng ([3, 3, 3, 3], x=3)</button>
+                <button type="button" class="btn-preset" id="btnPresetSoAm" data-preset="am">Số âm & 0 ([-15, -7, 0, 4, 12], x=0)</button>
+                <button type="button" class="btn-preset" id="btnPresetKhoaTrung" data-preset="khoatrung">Khóa trùng dài ([2, 2, 5, 5, 8, 8], x=5)</button>
+                <button type="button" class="btn-preset" id="btnPresetDon" data-preset="don">Đơn phần tử ([7], x=7)</button>
+                <button type="button" class="btn-preset" id="btnPresetRong" data-preset="rong">Mảng rỗng ([], x=10)</button>
+                <button type="button" class="btn-preset" id="btnPresetRandom" data-preset="random">🎲 Ngẫu nhiên</button>
+            </div>
+        </section>
+
+        <!-- Controls Toolbar -->
+        <section class="toolbar-section">
+            <div class="input-controls-row">
+                <div class="input-group flex-grow">
+                    <label for="inputArray">Mảng số nguyên <em>a</em> (cách nhau bởi dấu phẩy hoặc khoảng trắng):</label>
+                    <input type="text" id="inputArray" value="1, 2, 2, 4" placeholder="Ví dụ: 1, 2, 2, 4">
+                </div>
+                <div class="input-group">
+                    <label for="inputTarget">Khóa cần đếm <em>x</em>:</label>
+                    <input type="number" id="inputTarget" value="2">
+                </div>
+                <div class="input-group">
+                    <label>&nbsp;</label>
+                    <button type="button" class="btn-secondary" id="btnApplyCustom">Áp dụng mảng</button>
+                </div>
+            </div>
+
+            <div class="action-controls-row">
+                <div class="action-buttons-group">
+                    <button type="button" class="btn-primary" id="btnSolve">
+                        <span class="btn-icon">⚡</span> Giải ngay
+                    </button>
+                    <button type="button" class="btn-accent" id="btnNextStep">
+                        <span class="btn-icon">⏭</span> Giải từng bước (Nhấp để chuyển bước)
+                    </button>
+                    <button type="button" class="btn-outline" id="btnReset">
+                        <span class="btn-icon">↺</span> Làm mới
+                    </button>
+                    <button type="button" class="btn-outline" id="btnCompareLinear" title="Đối chiếu thuật toán duyệt tuần tự O(n)">
+                        <span class="btn-icon">⚖</span> Đối chiếu Tuyến tính
+                    </button>
+                    <button type="button" class="btn-outline" id="btnExtended" title="Mở rộng: Phân biệt < x và <= x">
+                        <span class="btn-icon">➕</span> Mở rộng (&le; x)
+                    </button>
+                    <button type="button" class="btn-outline" id="btnExportCSV" title="Xuất kết quả và bảng lần vết ra tệp CSV">
+                        <span class="btn-icon">💾</span> Xuất CSV
+                    </button>
+                </div>
+
+                <div class="speed-control">
+                    <label for="rangeSpeed">Tốc độ:</label>
+                    <input type="range" id="rangeSpeed" min="100" max="1500" step="50" value="400">
+                    <span id="speedDisplay">400ms</span>
+                </div>
+            </div>
+
+            <div class="status-banner" id="statusBanner">
+                <span class="status-icon">💡</span>
+                <span class="status-text" id="statusText">Sẵn sàng! Nhấn <strong>"Giải ngay"</strong> hoặc nhấp <strong>"Giải từng bước"</strong> để quan sát từng bước nhị phân.</span>
+            </div>
+        </section>
+
+        <!-- Main Visualizer Area -->
+        <main class="visualizer-main">
+            <!-- Array Representation Section -->
+            <section class="array-canvas-section">
+                <div class="section-header">
+                    <h2>TRỰC QUAN HÓA MẢNG VÀ CON TRỎ NHỊ PHÂN</h2>
+                    <div class="legend-group">
+                        <span class="legend-item"><span class="legend-color color-active"></span> Đoạn đang xét [L, R]</span>
+                        <span class="legend-item"><span class="legend-color color-mid"></span> Mid đang so sánh</span>
+                        <span class="legend-item"><span class="legend-color color-less"></span> Phần tử &lt; x</span>
+                        <span class="legend-item"><span class="legend-color color-ge"></span> Phần tử &ge; x</span>
+                        <span class="legend-item"><span class="legend-color color-boundary"></span> Biên đầu tiên</span>
+                    </div>
+                </div>
+
+                <div class="array-canvas-container" id="arrayContainer">
+                    <!-- Dynamic Array Elements injected by JavaScript -->
+                </div>
+
+                <!-- Explanation Box -->
+                <div class="step-explanation-box" id="explanationBox">
+                    <div class="explanation-title">Mô tả bước giải thuật:</div>
+                    <div class="explanation-content" id="explanationContent">
+                        Nhấn <strong>"Giải từng bước"</strong> để mỗi lần nhấp chuột bạn sẽ thấy một bước di chuyển của Left, Right, Mid và điều kiện so sánh.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Metric Cards Section -->
+            <section class="metrics-grid">
+                <div class="metric-card card-boundary">
+                    <div class="metric-header">
+                        <span class="metric-label">VỊ TRÍ BIÊN ĐẦU TIÊN (bien)</span>
+                        <span class="metric-badge">1-based</span>
+                    </div>
+                    <div class="metric-value" id="valBien">--</div>
+                    <div class="metric-desc" id="descBien">Vị trí đầu tiên có <em>a[i] &ge; x</em> (quy ước <em>n + 1</em> nếu không có)</div>
+                </div>
+
+                <div class="metric-card card-count">
+                    <div class="metric-header">
+                        <span class="metric-label">SỐ PHẦN TỬ NHỎ HƠN X</span>
+                        <span class="metric-badge">Kết quả chính</span>
+                    </div>
+                    <div class="metric-value" id="valSoNhoHon">--</div>
+                    <div class="metric-desc" id="descSoNhoHon">Số phần tử thỏa mãn <em>a[i] &lt; x</em> (bằng <em>bien - 1</em>)</div>
+                </div>
+
+                <div class="metric-card card-steps">
+                    <div class="metric-header">
+                        <span class="metric-label">SỐ LẦN CHIA MID</span>
+                        <span class="metric-badge">Độ phức tạp</span>
+                    </div>
+                    <div class="metric-value" id="valSteps">--</div>
+                    <div class="metric-desc" id="descSteps">Tối đa ⌊log<sub>2</sub> n⌋ + 1 phép so sánh <em>O(log n)</em></div>
+                </div>
+
+                <div class="metric-card card-linear">
+                    <div class="metric-header">
+                        <span class="metric-label">ĐỐI CHIẾU TUYẾN TÍNH</span>
+                        <span class="metric-badge">Duyệt <em>O(n)</em></span>
+                    </div>
+                    <div class="metric-value" id="valLinear">--</div>
+                    <div class="metric-desc" id="descLinear">Số phép duyệt tuần tự để kiểm chứng độc lập</div>
+                </div>
+            </section>
+
+            <!-- Step Trace Table Section -->
+            <section class="table-section">
+                <div class="section-header">
+                    <h2>BẢNG LẦN VẾT CHI TIẾT CÁC BƯỚC NHỊ PHÂN</h2>
+                    <span class="table-subtitle">Ghi lại toàn bộ trạng thái <em>left, right, mid, a[mid]</em>, điều kiện và quyết định chuyển nhánh</span>
+                </div>
+                <div class="table-wrapper">
+                    <table class="trace-table" id="traceTable">
+                        <thead>
+                            <tr>
+                                <th>Bước</th>
+                                <th>Left (1-based)</th>
+                                <th>Right (1-based)</th>
+                                <th>Mid (1-based)</th>
+                                <th>Giá trị a[Mid]</th>
+                                <th>So sánh: a[Mid] &ge; x ?</th>
+                                <th>Biên tạm</th>
+                                <th>Hành động &amp; Quyết định chuyển nhánh</th>
+                            </tr>
+                        </thead>
+                        <tbody id="traceTableBody">
+                            <tr>
+                                <td colspan="8" class="text-center empty-row">Chưa có dữ liệu lần vết. Hãy nhấn "Giải ngay" hoặc "Chạy từng bước".</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Extended Comparison Modal / Panel (Hidden by default, toggled via button) -->
+            <section class="extended-section" id="extendedPanel" style="display: none;">
+                <div class="section-header">
+                    <h2>PHÂN TÍCH MỞ RỘNG: BẤT ĐẲNG THỨC NGHIÊM (&lt; x) VS KHÔNG NGHIÊM (&le; x)</h2>
+                    <button type="button" class="btn-close-panel" id="btnCloseExtended">✕ Đóng</button>
+                </div>
+                <div class="extended-cards-grid">
+                    <div class="ext-card">
+                        <h3>1. Đếm nghiêm: Số phần tử &lt; x</h3>
+                        <p><strong>Điều kiện ranh giới:</strong> Tìm vị trí đầu tiên <em>a[i] &ge; x</em> (Lower Bound).</p>
+                        <p>Gặp <em>a[mid] &ge; x</em> &rArr; lưu <em>mid</em> và thu hẹp sang trái.</p>
+                        <div class="ext-res" id="extResLess">Kết quả: --</div>
+                    </div>
+                    <div class="ext-card">
+                        <h3>2. Đếm không nghiêm: Số phần tử &le; x</h3>
+                        <p><strong>Điều kiện ranh giới:</strong> Tìm vị trí đầu tiên <em>a[i] &gt; x</em> (Upper Bound).</p>
+                        <p>Gặp <em>a[mid] &gt; x</em> &rArr; lưu <em>mid</em> và thu hẹp sang trái.</p>
+                        <div class="ext-res" id="extResLe">Kết quả: --</div>
+                    </div>
+                    <div class="ext-card highlight-card">
+                        <h3>3. Tần suất xuất hiện: Số phần tử = x</h3>
+                        <p><strong>Công thức tính:</strong> <code>count(== x) = count(&le; x) - count(&lt; x)</code>.</p>
+                        <p>Bằng hiệu chỉ số giữa Upper Bound và Lower Bound.</p>
+                        <div class="ext-res" id="extResEq">Số lần xuất hiện của x: --</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Theoretical Foundations & Algorithm Invariant -->
+            <section class="theory-section">
+                <div class="section-header">
+                    <h2>CƠ SỞ LÝ THUYẾT VÀ BẤT BIẾN THUẬT TOÁN (INT1306 - MỤC 2.6.2)</h2>
+                </div>
+                <div class="theory-grid">
+                    <div class="theory-box">
+                        <h3>Bất biến vòng lặp (Loop Invariant)</h3>
+                        <p>Tại mỗi bước lặp của thuật toán:</p>
+                        <ul>
+                            <li>Mọi phần tử tại chỉ số <em>k &lt; left</em> (theo 1-based) đều thỏa mãn <em>a[k] &lt; x</em>.</li>
+                            <li>Nếu tồn tại phần tử &ge; <em>x</em>, thì vị trí xuất hiện đầu tiên của nó chắc chắn nằm trong đoạn [<em>left</em>, <em>right</em>] hoặc tại biến <strong>bien</strong> đã ghi nhận.</li>
+                            <li>Biến <strong>bien</strong> luôn giữ vị trí nhỏ nhất trong các phần tử &ge; <em>x</em> đã được phát hiện tính đến thời điểm hiện tại.</li>
+                        </ul>
+                    </div>
+                    <div class="theory-box">
+                        <h3>Định lý dừng và tính đúng đắn</h3>
+                        <p>Tại sao thuật toán luôn dừng và chính xác?</p>
+                        <ul>
+                            <li>Sau mỗi bước, khoảng cách <em>right - left</em> luôn giảm nghiêm ngặt ít nhất một nửa: ⌊(<em>right</em> - <em>left</em>) / 2⌋.</li>
+                            <li>Khi vòng lặp kết thúc (<em>left &gt; right</em>), không còn phần tử nào chưa xét. Ranh giới <strong>bien</strong> chính là vị trí đầu tiên có <em>a[i] &ge; x</em>.</li>
+                            <li>Do mảng tăng không giảm, toàn bộ tiền tố từ chỉ số 1 đến <em>bien - 1</em> đều &lt; <em>x</em>, do đó số phần tử nhỏ hơn <em>x</em> chính xác là <strong>bien - 1</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>Báo cáo đồ án cá nhân môn học Cấu trúc dữ liệu và giải thuật (INT13185 - Nhóm 03) • Đề tài DT022</p>
+                <p>Sinh viên thực hiện: <strong>Ngô Lê Tấn Nhân (N24DCDT059)</strong> • Học viện Công nghệ Bưu chính Viễn thông - Cơ sở tại TP.HCM</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+THÔNG TIN NỘP ĐỀ TÀI CÁ NHÂN
+INT13185 — Nhóm 03
+
+Họ và tên: Ngô Lê Tấn Nhân
+MSSV: N24DCDT059
+Lớp: D24CQDT01-N
+Mã đề: DT022
+Tên đề: Đếm số phần tử nhỏ hơn x bằng tìm kiếm nhị phân
+
+URL GitHub thật: https://github.com/tannhan2205/NgoLeTanNhan-N24DCDT059-CTDLGT
+SHA C đầy đủ của mã/test/input dùng chạy và chụp ảnh: a39b3e45a96f617269342a6815b2f12cfa980258
+Permalink tệp thuật toán chính tại C: https://github.com/tannhan2205/NgoLeTanNhan-N24DCDT059-CTDLGT/blob/a39b3e45a96f617269342a6815b2f12cfa980258/NgoLeTanNhan-N24DCDT059/DT022/src/DemNhoHonNhiPhan.hpp
+Permalink tệp kiểm thử tại C: https://github.com/tannhan2205/NgoLeTanNhan-N24DCDT059-CTDLGT/blob/a39b3e45a96f617269342a6815b2f12cfa980258/NgoLeTanNhan-N24DCDT059/DT022/test/runtests.cpp
+SHA S đầy đủ của phiên bản nộp cuối: a39b3e45a96f617269342a6815b2f12cfa980258
+Xác nhận mã/test/input không đổi giữa C và S, hoặc mô tả phần đã chạy lại: Xác nhận mã nguồn, bộ kiểm thử và dữ liệu đầu vào hoàn toàn không đổi giữa phiên bản C và S.
+
+Ngôn ngữ và phiên bản: C++ (g++ 14.2.0 / MinGW-W64 UCRT64)
+Lệnh chạy ví dụ 1: ./main.exe --vd1
+Lệnh chạy ví dụ 2: ./main.exe --vd2
+Lệnh nhập dữ liệu mới: ./main.exe
+Lệnh biên dịch (nếu dùng C++): g++ -O2 -static -std=c++14 src/main.cpp -o main.exe && g++ -O2 -static -std=c++14 test/runtests.cpp -o test/runtests.exe
+Lệnh chạy bộ kiểm thử: ./test/runtests.exe
+Số ca kiểm độc lập: 14
+Số phép kiểm đạt / tổng số phép kiểm: 14/14 (100%)
+
+Đã có đủ 11 ảnh cá nhân trong báo cáo và ZIP (Có/Chưa): Có
+Ảnh A10 clone/chạy C đã có (Có/Chưa): Có
+Đã clone SHA S vào thư mục mới và chạy lại (Có/Chưa): Có
+Tóm tắt kết quả chạy lại hai ví dụ và bộ test từ S: Chạy lại chính xác 14/14 ca kiểm thử đạt 100%, ví dụ 1 đạt so_nho_hon=1, bien=2; ví dụ 2 đạt so_nho_hon=4, bien=5.
+Giảng viên truy cập được GitHub và permalink (Có/Chưa): Có
+
+Tên tệp Word nộp: N24DCDT059_DT022_NgoLeTanNhan_BaoCao.docx
+Tên tệp PDF nộp: N24DCDT059_DT022_NgoLeTanNhan_BaoCao.pdf
+Tên tệp ZIP mã nguồn nộp: N24DCDT059_DT022_NgoLeTanNhan_Code.zip
+Ngày hoàn tất: 30/10/2026
