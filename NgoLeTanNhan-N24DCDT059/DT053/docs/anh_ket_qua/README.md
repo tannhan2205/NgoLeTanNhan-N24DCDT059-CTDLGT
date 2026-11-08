@@ -14,3 +14,5 @@ Sinh viên: Ngô Lê Tấn Nhân - MSSV: N24DCDT059
 | A09 | 4.9 | `09_tong_ket_kiem_thu.png` | Lệnh chạy và tổng kết 14 ca độc lập (100% PASS) |
 | A10 | 4.10 | `10_clone_sach_chay_lai.png` | Clone C vào thư mục mới, kiểm HEAD, chạy lại ví dụ và test |
 | A11 | 4.11 | `11_github_repo_commit.png` | Giao diện Repository thật của bạn trên GitHub chứa commit C |
+
+
